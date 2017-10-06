@@ -47,13 +47,17 @@ def signup():
     if not valid(username):
         username_error = "That's not a valid username."  
         username = ''
+        password = ''
+        verify_password = ''
 
     if not valid(password):
         password_error = "That's not a valid password."
         password = ''
+        verify_password = ''
     
     if verify_password == '':
         verify_error = "Passwords don't match."
+        password = ''
     
     if password != verify_password:
         verify_error = "Passwords don't match."
@@ -63,6 +67,8 @@ def signup():
     if not is_valid(email):
         email_error = "That's not a valid email."
         email = ''
+        password = ''
+        verify_password = ''
 
 
     if not username_error and not password_error and not verify_error and not email_error:
